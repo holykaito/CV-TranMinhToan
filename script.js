@@ -1,5 +1,5 @@
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const revealTargets = document.querySelectorAll('.about-main, .metrics, .section-heading, .journey-grid, .project-line, .lesson-grid, .classroom-gallery, .gallery, .review-grid, .review-context, .credentials-grid');
+const revealTargets = document.querySelectorAll('.about-main, .metrics, .section-heading, .journey-grid, .project-line, .media-grid, .lesson-grid, .classroom-gallery, .gallery, .review-grid, .review-context, .credentials-grid');
 if ('IntersectionObserver' in window && !reduced) {
  const observer = new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}), {threshold:0.08});
  revealTargets.forEach(el => {el.classList.add('reveal-ready');observer.observe(el)});
